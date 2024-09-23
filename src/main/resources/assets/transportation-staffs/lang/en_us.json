@@ -1,0 +1,8 @@
+{
+  "item.transportation-staffs.wooden_staff": "Wooden Staff",
+
+  "itemgroup.staff": "Staffs of Transportation",
+
+  "tooltip.transportation-staffs.wooden_staff.tooltip": "Teleports the player 7 blocks forward"
+
+}

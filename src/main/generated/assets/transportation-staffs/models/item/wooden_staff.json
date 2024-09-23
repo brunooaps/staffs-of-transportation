@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "transportation-staffs:item/wooden_staff"
+  }
+}
