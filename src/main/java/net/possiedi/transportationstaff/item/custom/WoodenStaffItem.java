@@ -40,7 +40,6 @@ public class WoodenStaffItem extends Item {
 
     @Override
     public void onStoppedUsing(ItemStack stack, World world, LivingEntity user, int remainingUseTicks) {
-        if (!world.isClient) {
 
             double yawRad = Math.toRadians(user.getYaw());
             double pitchRad = Math.toRadians(user.getPitch());
@@ -54,6 +53,9 @@ public class WoodenStaffItem extends Item {
             double teleportY = user.getY() + y * distance;
             double teleportZ = user.getZ() + z * distance;
 
+        if (!world.isClient) {
+
+
             world.playSound(null, teleportX, teleportY, teleportZ, ModSounds.STAFF_TELEPORTATION_SOUND,
                     SoundCategory.AMBIENT, 1f, 1f);
 
@@ -65,6 +67,7 @@ public class WoodenStaffItem extends Item {
             }
         } else {
             spawnTeleportParticles(world, user.getX(), user.getY(), user.getZ(), 200);
+            spawnTeleportParticles(world, teleportX, teleportY, teleportZ, 200);
         }
     }
 
