@@ -3,9 +3,9 @@
 	"id": "transportation-staffs",
 	"version": "${version}",
 	"name": "Transportation Staffs",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "Staffs that teleport the player",
 	"authors": [
-		"Me!"
+		"Possiedi"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",

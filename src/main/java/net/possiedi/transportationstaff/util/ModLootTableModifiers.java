@@ -22,7 +22,7 @@ public class ModLootTableModifiers {
             new Identifier("minecraft", "chests/jungle_temple");
 
     private static final Identifier DESERT_PYRAMID =
-            new Identifier("minecraft", "entities/desert_pyramid");
+            new Identifier("minecraft", "chests/desert_pyramid");
 
     private static final Identifier SUSPICIOUS_SAND_ID =
             new Identifier("minecraft", "archaeology/desert_pyramid");
@@ -32,9 +32,9 @@ public class ModLootTableModifiers {
             if (JUNGLE_TEMPLE_ID.equals(id)) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(1f))
+                        .conditionally(RandomChanceLootCondition.builder(0.3f))
                         .with(ItemEntry.builder(ModItems.WOODEN_STAFF))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0.2f, 0.5f)).build());
 
                 tableBuilder.pool(poolBuilder.build());
             }
@@ -42,9 +42,9 @@ public class ModLootTableModifiers {
             if (DESERT_PYRAMID.equals(id)) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(1f))
+                        .conditionally(RandomChanceLootCondition.builder(0.3f))
                         .with(ItemEntry.builder(ModItems.WOODEN_STAFF))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0.2f, 0.5f)).build());
 
                 tableBuilder.pool(poolBuilder.build());
             }

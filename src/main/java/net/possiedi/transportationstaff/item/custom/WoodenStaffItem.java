@@ -5,14 +5,18 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.particle.ParticleTypes;
+import net.minecraft.sound.SoundCategory;
 import net.minecraft.text.Text;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.UseAction;
 import net.minecraft.world.World;
+import net.possiedi.transportationstaff.sound.ModSounds;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
+import java.util.Random;
 
 public class WoodenStaffItem extends Item {
     public WoodenStaffItem(Settings settings) {
@@ -21,7 +25,7 @@ public class WoodenStaffItem extends Item {
 
     @Override
     public UseAction getUseAction(ItemStack stack) {
-        return UseAction.BOW;
+        return UseAction.BLOCK;
     }
 
     @Override
@@ -50,7 +54,29 @@ public class WoodenStaffItem extends Item {
             double teleportY = user.getY() + y * distance;
             double teleportZ = user.getZ() + z * distance;
 
+            world.playSound(null, teleportX, teleportY, teleportZ, ModSounds.STAFF_TELEPORTATION_SOUND,
+                    SoundCategory.AMBIENT, 1f, 1f);
+
             user.teleport(teleportX, teleportY, teleportZ);
+
+
+            if (user instanceof PlayerEntity) {
+                ((PlayerEntity) user).getItemCooldownManager().set(this, 50);
+            }
+        } else {
+            spawnTeleportParticles(world, user.getX(), user.getY(), user.getZ(), 200);
+        }
+    }
+
+    private void spawnTeleportParticles(World world, double x, double y, double z, int particleCount) {
+        Random random = new Random();
+
+        for (int i = 0; i < particleCount; i++) {
+            double offsetX = (random.nextDouble() - 0.5) * 2.0;
+            double offsetY = random.nextDouble() * 2.0;
+            double offsetZ = (random.nextDouble() - 0.5) * 2.0;
+
+            world.addParticle(ParticleTypes.PORTAL, x + offsetX, y + offsetY, z + offsetZ, 0, 0, 0);
         }
     }
 

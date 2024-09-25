@@ -1,0 +1,8 @@
+{
+  "staff_teleportation_sound": {
+    "subtitle": "sounds.transportation-staffs.staff_teleportation_sound",
+    "sounds": [
+      "transportation-staffs:staff_teleportation_sound"
+    ]
+  }
+}
