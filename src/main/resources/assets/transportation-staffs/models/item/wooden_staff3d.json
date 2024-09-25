@@ -2,11 +2,11 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [8, 8],
 	"textures": {
-		"0": "transportation-staffs:item/eye",
-		"1": "transportation-staffs:item/staff",
-		"3": "transportation-staffs:item/suporte",
-		"7": "transportation-staffs:item/seguradores",
-		"particle": "transportation-staffs:item/eye"
+		"0": "transportation-staffs:item/wooden_staff_eye",
+		"1": "transportation-staffs:item/wooden_staff_staff",
+		"3": "transportation-staffs:item/wooden_staff_suporte",
+		"7": "transportation-staffs:item/wooden_staff_seguradores",
+		"particle": "transportation-staffs:item/wooden_staff_eye"
 	},
 	"elements": [
 		{

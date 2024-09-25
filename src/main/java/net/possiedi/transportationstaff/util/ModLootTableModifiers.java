@@ -24,6 +24,18 @@ public class ModLootTableModifiers {
     private static final Identifier DESERT_PYRAMID =
             new Identifier("minecraft", "chests/desert_pyramid");
 
+    private static final Identifier BASTION_BRIDGE =
+                new Identifier("minecraft", "chests/bastion_bridge");
+
+    private static final Identifier BASTION_HOGLIN_STABLE =
+            new Identifier("minecraft", "chests/bastion_hoglin_stable");
+
+    private static final Identifier BASTION_OTHER =
+            new Identifier("minecraft", "chests/bastion_other");
+
+    private static final Identifier BASTION_TREASURE =
+            new Identifier("minecraft", "chests/bastion_treasure");
+
     private static final Identifier SUSPICIOUS_SAND_ID =
             new Identifier("minecraft", "archaeology/desert_pyramid");
 
@@ -44,6 +56,46 @@ public class ModLootTableModifiers {
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(0.3f))
                         .with(ItemEntry.builder(ModItems.WOODEN_STAFF))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0.2f, 0.5f)).build());
+
+                tableBuilder.pool(poolBuilder.build());
+            }
+
+            if (BASTION_BRIDGE.equals(id)) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.3f))
+                        .with(ItemEntry.builder(ModItems.IRON_STAFF))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0.2f, 0.5f)).build());
+
+                tableBuilder.pool(poolBuilder.build());
+            }
+
+            if (BASTION_TREASURE.equals(id)) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.3f))
+                        .with(ItemEntry.builder(ModItems.IRON_STAFF))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0.2f, 0.5f)).build());
+
+                tableBuilder.pool(poolBuilder.build());
+            }
+
+            if (BASTION_OTHER.equals(id)) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.3f))
+                        .with(ItemEntry.builder(ModItems.IRON_STAFF))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0.2f, 0.5f)).build());
+
+                tableBuilder.pool(poolBuilder.build());
+            }
+
+            if (BASTION_HOGLIN_STABLE.equals(id)) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.3f))
+                        .with(ItemEntry.builder(ModItems.IRON_STAFF))
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0.2f, 0.5f)).build());
 
                 tableBuilder.pool(poolBuilder.build());

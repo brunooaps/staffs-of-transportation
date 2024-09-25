@@ -19,6 +19,7 @@ public class ModItemGroups {
 
                         //STAFFS OF TRANSPORTATION MOD
                         entries.add(ModItems.WOODEN_STAFF);
+                        entries.add(ModItems.IRON_STAFF);
 
                     }).build());
 

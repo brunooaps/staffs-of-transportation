@@ -1,10 +1,11 @@
 {
   "item.transportation-staffs.wooden_staff": "Wooden Staff",
+  "item.transportation-staffs.iron_staff": "Iron Staff",
 
   "sounds.transportation-staffs.staff_teleportation_sound": "Staff Teleporting Sound",
 
   "itemgroup.staff": "Staffs of Transportation",
 
-  "tooltip.transportation-staffs.wooden_staff.tooltip": "Teleports the player 7 blocks forward"
+  "tooltip.transportation-staffs.staff.tooltip": "Teleports the player a few blocks forward"
 
 }

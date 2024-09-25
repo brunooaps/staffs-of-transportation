@@ -18,9 +18,13 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 import java.util.Random;
 
-public class WoodenStaffItem extends Item {
-    public WoodenStaffItem(Settings settings) {
+
+public class StaffItem extends Item {
+    private final double teleportDistance;
+
+    public StaffItem(Settings settings, double teleportDistance) {
         super(settings);
+        this.teleportDistance = teleportDistance;
     }
 
     @Override
@@ -48,10 +52,9 @@ public class WoodenStaffItem extends Item {
             double y = -Math.sin(pitchRad);
             double z = Math.cos(yawRad) * Math.cos(pitchRad);
 
-            double distance = 7;
-            double teleportX = user.getX() + x * distance;
-            double teleportY = user.getY() + y * distance;
-            double teleportZ = user.getZ() + z * distance;
+            double teleportX = user.getX() + x * teleportDistance;
+            double teleportY = user.getY() + y * teleportDistance;
+            double teleportZ = user.getZ() + z * teleportDistance;
 
         if (!world.isClient) {
 
@@ -90,7 +93,7 @@ public class WoodenStaffItem extends Item {
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        tooltip.add(Text.translatable("tooltip.transportation-staffs.wooden_staff.tooltip"));
+        tooltip.add(Text.translatable("tooltip.transportation-staffs.staff.tooltip"));
         super.appendTooltip(stack, world, tooltip, context);
     }
 }
