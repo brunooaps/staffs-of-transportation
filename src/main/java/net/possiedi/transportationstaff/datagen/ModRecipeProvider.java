@@ -32,15 +32,17 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.WOODEN_STAFF)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.IRON_STAFF, 1)
-                .pattern("BEB")
+                .pattern(" BE")
                 .pattern(" I ")
-                .pattern(" I ")
+                .pattern("G  ")
                 .input('B', Items.BLAZE_POWDER)
                 .input('E', Items.ENDER_PEARL)
                 .input('I', Items.IRON_INGOT)
+                .input('G', Items.GOLD_NUGGET)
                 .criterion(hasItem(Items.ENDER_PEARL), conditionsFromItem(Items.ENDER_PEARL))
                 .criterion(hasItem(Items.BLAZE_POWDER), conditionsFromItem(Items.BLAZE_POWDER))
                 .criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(Items.IRON_INGOT))
+                .criterion(hasItem(Items.GOLD_NUGGET), conditionsFromItem(Items.GOLD_NUGGET))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.IRON_STAFF)));
     }
 }

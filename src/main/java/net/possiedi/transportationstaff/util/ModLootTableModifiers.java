@@ -54,7 +54,7 @@ public class ModLootTableModifiers {
             if (DESERT_PYRAMID.equals(id)) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.3f))
+                        .conditionally(RandomChanceLootCondition.builder(0.2f))
                         .with(ItemEntry.builder(ModItems.WOODEN_STAFF))
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0.2f, 0.5f)).build());
 
@@ -64,7 +64,7 @@ public class ModLootTableModifiers {
             if (BASTION_BRIDGE.equals(id)) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.3f))
+                        .conditionally(RandomChanceLootCondition.builder(0.2f))
                         .with(ItemEntry.builder(ModItems.IRON_STAFF))
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0.2f, 0.5f)).build());
 
@@ -74,7 +74,7 @@ public class ModLootTableModifiers {
             if (BASTION_TREASURE.equals(id)) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.3f))
+                        .conditionally(RandomChanceLootCondition.builder(0.2f))
                         .with(ItemEntry.builder(ModItems.IRON_STAFF))
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0.2f, 0.5f)).build());
 
@@ -84,7 +84,7 @@ public class ModLootTableModifiers {
             if (BASTION_OTHER.equals(id)) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.3f))
+                        .conditionally(RandomChanceLootCondition.builder(0.2f))
                         .with(ItemEntry.builder(ModItems.IRON_STAFF))
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0.2f, 0.5f)).build());
 
@@ -94,7 +94,7 @@ public class ModLootTableModifiers {
             if (BASTION_HOGLIN_STABLE.equals(id)) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.3f))
+                        .conditionally(RandomChanceLootCondition.builder(0.2f))
                         .with(ItemEntry.builder(ModItems.IRON_STAFF))
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0.2f, 0.5f)).build());
 
